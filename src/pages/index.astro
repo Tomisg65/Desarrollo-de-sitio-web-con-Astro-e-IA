@@ -1,16 +1,68 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import TechCard from "../components/TechCard.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Inicio - Herramientas de Inclusión">
+	<section class="hero">
+		<h1>Tecnología para la Inclusión Digital</h1>
+		<p class="subtitle">
+			Explora las herramientas que transforman la interacción diaria y
+			garantizan el acceso universal a la información para personas con
+			discapacidad.
+		</p>
+	</section>
+
+	<section class="features-grid">
+		<TechCard
+			title="Lectores de Pantalla"
+			category="Visual"
+			description="Herramientas de software que convierten el texto e imágenes en audio o salida braille."
+			icon="👁️"
+			link="/tecnologias"
+		/>
+		<TechCard
+			title="Sistemas AAC"
+			category="Comunicación"
+			description="Soluciones de comunicación aumentativa y alternativa para personas con dificultades de habla."
+			icon="💬"
+			link="/aplicaciones"
+		/>
+		<TechCard
+			title="Hardware Adaptado"
+			category="Motor"
+			description="Punteros cefálicos, conmutadores y teclados adaptados para el control total del equipo."
+			icon="⌨️"
+			link="/tecnologias"
+		/>
+	</section>
+</MainLayout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 3rem 1rem;
+		background-color: #f1f5f9;
+		border-radius: 16px;
+		margin-bottom: 2.5rem;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #0f172a;
+	}
+
+	.subtitle {
+		font-size: 1.2rem;
+		color: var(--text-muted);
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+	}
+</style>

@@ -1,0 +1,9 @@
+Prompt 1:
+hola buenas, necesito que me crees un sitio web astro, este sitio debe tener 4 paginas funcionales (las cuales son; Inicio, Tecnologías de apoyo, Aplicaciones y recursos), 4 componentes, 1 layout, Estilos CSS (tambien diseño responsive), navegacion funcional a traves de las paginas, aparte la pagina tiene que estar con el principal motivo de ser una presentación de herramientas tecnológicas que facilitan
+
+el acceso a la información y la participación de personas
+
+con discapacidad. tambien necesito que tenga colores tenues no tan llamativos y que tenga una letra llamativa a primera vista 
+
+Prompt 2: 
+esta muy bueno y todo pero preciso de que cada pagina sea un codigo por separado y que no todo este un una sola pagina 

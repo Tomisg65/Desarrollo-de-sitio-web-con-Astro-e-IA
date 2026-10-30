@@ -1,0 +1,71 @@
+<div class="accessibility-bar" aria-label="Controles de accesibilidad">
+    <div class="bar-container">
+        <span>Accesibilidad:</span>
+        <button id="btn-font-increase" aria-label="Aumentar tamaño de letra"
+            >A+</button
+        >
+        <button id="btn-font-decrease" aria-label="Reducir tamaño de letra"
+            >A-</button
+        >
+        <button id="btn-contrast" aria-label="Alternar alto contraste"
+            >Alto Contraste</button
+        >
+    </div>
+</div>
+
+<script>
+    let baseFontSize = 16;
+
+    document
+        .getElementById("btn-font-increase")
+        ?.addEventListener("click", () => {
+            if (baseFontSize < 22) {
+                baseFontSize += 2;
+                document.documentElement.style.fontSize = `${baseFontSize}px`;
+            }
+        });
+
+    document
+        .getElementById("btn-font-decrease")
+        ?.addEventListener("click", () => {
+            if (baseFontSize > 14) {
+                baseFontSize -= 2;
+                document.documentElement.style.fontSize = `${baseFontSize}px`;
+            }
+        });
+
+    document.getElementById("btn-contrast")?.addEventListener("click", () => {
+        document.body.classList.toggle("high-contrast");
+    });
+</script>
+
+<style>
+    .accessibility-bar {
+        background-color: #e2e8f0;
+        font-size: 0.85rem;
+        padding: 0.4rem 1.5rem;
+        border-bottom: 1px solid #cbd5e1;
+    }
+
+    .bar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        justify-content: flex-end;
+    }
+
+    button {
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        padding: 0.2rem 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #f8fafc;
+    }
+</style>

@@ -1,0 +1,88 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Recursos y Guías">
+    <header class="page-header">
+        <h1>Recursos y Guías de Accesibilidad</h1>
+        <p>
+            Documentación, estándares y enlaces útiles para desarrolladores,
+            creadores de contenido y usuarios.
+        </p>
+    </header>
+
+    <section class="resources-list">
+        <article class="resource-item">
+            <h3>Pautas WCAG 2.1 (W3C)</h3>
+            <p>
+                Estándares internacionales para crear contenido web accesible a
+                personas con discapacidades.
+            </p>
+            <a
+                href="https://www.w3.org/TR/WCAG21/"
+                target="_blank"
+                rel="noopener">Consultar norma oficial &rarr;</a
+            >
+        </article>
+
+        <article class="resource-item">
+            <h3>Guía de Accesibilidad Cognitiva</h3>
+            <p>
+                Buenas prácticas para diseñar interfaces con lenguaje claro,
+                estructuras simples y previsibilidad.
+            </p>
+            <a href="#" class="disabled">Descargar PDF (Guía)</a>
+        </article>
+
+        <article class="resource-item">
+            <h3>Herramientas de Evaluación de Contraste</h3>
+            <p>
+                Comprobadores para asegurar la legibilidad de colores según las
+                métricas AA y AAA.
+            </p>
+            <a
+                href="https://webaim.org/resources/contrastchecker/"
+                target="_blank"
+                rel="noopener">Ir al comprobador WebAIM &rarr;</a
+            >
+        </article>
+    </section>
+</MainLayout>
+
+<style>
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .resources-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .resource-item {
+        background: var(--bg-card);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+    }
+
+    .resource-item h3 {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .resource-item p {
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+    }
+
+    .resource-item a {
+        color: #334155;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .resource-item a:hover {
+        text-decoration: underline;
+    }
+</style>

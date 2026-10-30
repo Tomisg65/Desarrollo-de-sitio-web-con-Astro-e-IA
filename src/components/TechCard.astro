@@ -1,0 +1,97 @@
+---
+interface Props {
+    title: string;
+    category: string;
+    description: string;
+    icon?: string;
+    link?: string;
+}
+
+const { title, category, description, icon = "💡", link } = Astro.props;
+---
+
+<article class="card">
+    <div class="card-header">
+        <span class="card-icon" aria-hidden="true">{icon}</span>
+        <span class="category">{category}</span>
+    </div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    {
+        link && (
+            <a
+                href={link}
+                class="card-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Saber más <span aria-hidden="true">&rarr;</span>
+            </a>
+        )
+    }
+</article>
+
+<style>
+    .card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .card-icon {
+        font-size: 1.8rem;
+    }
+
+    .category {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: #f1f5f9;
+        color: #475569;
+        padding: 0.25rem 0.6rem;
+        border-radius: 20px;
+    }
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+    }
+
+    p {
+        color: var(--text-muted);
+        margin: 0 0 1.25rem 0;
+        flex-grow: 1;
+        font-size: 0.95rem;
+    }
+
+    .card-link {
+        color: #334155;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .card-link:hover {
+        text-decoration: underline;
+    }
+</style>

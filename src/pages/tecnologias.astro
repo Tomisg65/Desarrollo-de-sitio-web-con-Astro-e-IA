@@ -1,0 +1,61 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import TechCard from "../components/TechCard.astro";
+
+const tecnologias = [
+    {
+        title: "NVDA & JAWS",
+        category: "Visual",
+        description:
+            "Software lector de pantalla que permite a usuarios ciegos o con baja visión navegar mediante voz sintética.",
+        icon: "🔊",
+    },
+    {
+        title: "Punteros Ópticos y Tracking Visual",
+        category: "Motor",
+        description:
+            "Sistemas que permiten controlar el cursor del ordenador mediante el movimiento de los ojos.",
+        icon: "👁️",
+    },
+    {
+        title: "Sistemas de Bucles Magnéticos",
+        category: "Auditivo",
+        description:
+            "Tecnología que transforma la señal de audio en un campo magnético captado por audífonos.",
+        icon: "🎧",
+    },
+    {
+        title: "Teclados de Macrotipos",
+        category: "Visual",
+        description:
+            "Teclados físicos con caracteres de gran tamaño y alto contraste para facilitar la escritura.",
+        icon: "⌨️",
+    },
+];
+---
+
+<MainLayout title="Tecnologías de Apoyo">
+    <header class="page-header">
+        <h1>Tecnologías de Apoyo</h1>
+        <p>
+            Dispositivos y soluciones de hardware/software diseñados para
+            superar barreras de accesibilidad.
+        </p>
+    </header>
+
+    <div class="grid">
+        {tecnologias.map((tech) => <TechCard {...tech} />)}
+    </div>
+</MainLayout>
+
+<style>
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+</style>

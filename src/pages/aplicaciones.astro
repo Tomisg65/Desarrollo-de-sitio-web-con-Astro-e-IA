@@ -1,0 +1,61 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import TechCard from "../components/TechCard.astro";
+
+const apps = [
+    {
+        title: "Be My Eyes",
+        category: "Móvil / Visual",
+        description:
+            "Conecta a personas ciegas con voluntarios o IA para resolver tareas visuales cotidianas en tiempo real.",
+        icon: "📱",
+    },
+    {
+        title: "Lazarillo",
+        category: "Navegación",
+        description:
+            "GPS accesible que guía a personas con discapacidad visual mediante indicaciones de voz detalladas.",
+        icon: "🗺️",
+    },
+    {
+        title: "Let's Talk AAC",
+        category: "Comunicación",
+        description:
+            "Aplicación de pictogramas diseñada para facilitar la comunicación no verbal.",
+        icon: "🗣️",
+    },
+    {
+        title: "Live Transcribe",
+        category: "Auditivo",
+        description:
+            "Subtitulado en tiempo real de conversaciones y sonidos ambientales para personas con sordera.",
+        icon: "📝",
+    },
+];
+---
+
+<MainLayout title="Aplicaciones Accesibles">
+    <header class="page-header">
+        <h1>Aplicaciones Moviles y Web</h1>
+        <p>
+            Software optimizado para la participación social, educativa y
+            profesional de todas las personas.
+        </p>
+    </header>
+
+    <div class="grid">
+        {apps.map((app) => <TechCard {...app} />)}
+    </div>
+</MainLayout>
+
+<style>
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+</style>
